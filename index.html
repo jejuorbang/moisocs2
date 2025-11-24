@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>모이소 고객 CS 센터</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>모이소 고객 CS 센터</h1>
+            <p class="subtitle">고객님의 문의사항에 신속하게 답변드리겠습니다</p>
+        </header>
+
+        <main>
+            <section class="input-section">
+                <h2>문의 내용 입력</h2>
+                <div class="input-container">
+                    <textarea
+                        id="customerInput"
+                        placeholder="고객 클레임이나 문의사항을 입력해주세요&#10;&#10;예시:&#10;- 환불 관련 문의&#10;- 상품 불량 신고&#10;- 서비스 이용 문의"
+                        rows="6"
+                    ></textarea>
+                    <button id="submitBtn" class="submit-btn">
+                        <span class="btn-text">답변 받기</span>
+                        <span class="btn-loading" style="display: none;">처리 중...</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="output-section" id="outputSection" style="display: none;">
+                <h2>답변 예시</h2>
+                <div class="response-container">
+                    <div class="response-header">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                        <span>CS 전문가 답변</span>
+                    </div>
+                    <div id="responseText" class="response-text"></div>
+                    <button id="copyBtn" class="copy-btn">
+                        📋 답변 복사하기
+                    </button>
+                </div>
+            </section>
+
+            <section class="error-section" id="errorSection" style="display: none;">
+                <div class="error-container">
+                    <div class="error-icon">⚠️</div>
+                    <p id="errorText" class="error-text"></p>
+                    <button id="retryBtn" class="retry-btn">다시 시도</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2024 모이소. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
